@@ -53,4 +53,10 @@ namespace std {
 }
 #endif
 
+#if defined(SOCI_HAVE_CXX_C11) || (defined(_MSC_VER) && _MSC_VER >= 1900)
+	#define SOCI_NOEXCEPT_FALSE noexcept(false)
+#else
+	#define SOCI_NOEXCEPT_FALSE
+#endif
+
 #endif // SOCI_PLATFORM_H_INCLUDED
